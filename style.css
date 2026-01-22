@@ -1579,6 +1579,10 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-visual {
         max-width: 350px;
         height: 300px;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
     }
     
     .pc-showcase {
@@ -1606,6 +1610,11 @@ img { max-width: 100%; height: auto; display: block; }
     
     .pc-top-fans {
         left: 10px;
+    }
+    
+    .floating-specs {
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .floating-spec {
