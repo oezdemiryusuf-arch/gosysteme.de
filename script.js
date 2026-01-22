@@ -130,4 +130,106 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// ===== Product Image Slider =====
+document.querySelectorAll('.product-slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const images = track.querySelectorAll('img');
+    const prevBtn = slider.querySelector('.slider-prev');
+    const nextBtn = slider.querySelector('.slider-next');
+    const dots = slider.querySelectorAll('.dot');
+    
+    let currentIndex = 0;
+    const totalImages = images.length;
+    
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateSlider();
+    }
+    
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateSlider();
+    }
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateSlider();
+        });
+    });
+    
+    // Touch/Swipe support
+    let startX = 0;
+    let isDragging = false;
+    
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+    
+    slider.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    }, { passive: false });
+    
+    slider.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        isDragging = false;
+    });
+    
+    // Mouse drag support
+    slider.addEventListener('mousedown', (e) => {
+        startX = e.clientX;
+        isDragging = true;
+        slider.style.cursor = 'grabbing';
+    });
+    
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    slider.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        const diff = startX - e.clientX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        isDragging = false;
+        slider.style.cursor = 'grab';
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+        isDragging = false;
+        slider.style.cursor = 'grab';
+    });
+    
+    slider.style.cursor = 'grab';
+});
+
 console.log('GoSysteme Website loaded successfully!');
