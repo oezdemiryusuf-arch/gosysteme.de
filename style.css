@@ -1468,6 +1468,63 @@ img { max-width: 100%; height: auto; display: block; }
     color: var(--text-primary);
 }
 
+/* ========================================
+   Extra Services Banner
+   ======================================== */
+
+.extra-services-banner {
+    padding: 60px 0;
+    background: var(--bg-secondary);
+}
+
+.extra-services-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.08) 0%, rgba(0, 113, 227, 0.03) 100%);
+    border-radius: 20px;
+    padding: 40px 50px;
+    border: 2px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.extra-services-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #00d4ff, var(--accent));
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.extra-services-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.extra-services-text p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.extra-services-text strong {
+    color: var(--accent);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
     :root {
@@ -1580,12 +1637,14 @@ img { max-width: 100%; height: auto; display: block; }
         max-width: 350px;
         height: 300px;
         margin: 0 auto;
-        left: 50%;
-        transform: translateX(-50%);
         position: relative;
     }
     
     .pc-showcase {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 140px;
         height: 100px;
     }
@@ -1613,8 +1672,12 @@ img { max-width: 100%; height: auto; display: block; }
     }
     
     .floating-specs {
+        position: absolute;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
     }
     
     .floating-spec {
@@ -1665,6 +1728,20 @@ img { max-width: 100%; height: auto; display: block; }
     .steps-grid,
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .extra-services-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 24px;
+    }
+    
+    .extra-services-text h3 {
+        font-size: 18px;
+    }
+    
+    .extra-services-text p {
+        font-size: 15px;
     }
     
     .product-slider {
