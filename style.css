@@ -1485,7 +1485,43 @@ img { max-width: 100%; height: auto; display: block; }
     }
     
     .hero-visual {
-        display: none;
+        max-width: 500px;
+        height: 400px;
+    }
+    
+    /* Kleinere Orbit-Radien für Tablet */
+    .floating-spec:nth-child(1) { animation: orbit1-tablet 22s linear infinite; animation-delay: 0s; }
+    .floating-spec:nth-child(2) { animation: orbit2-tablet 24s linear infinite; animation-delay: -1.2s; }
+    .floating-spec:nth-child(3) { animation: orbit3-tablet 23s linear infinite; animation-delay: -2.4s; }
+    .floating-spec:nth-child(4) { animation: orbit1-tablet 21s linear infinite; animation-delay: -3.6s; }
+    .floating-spec:nth-child(5) { animation: orbit2-tablet 25s linear infinite; animation-delay: -4.8s; }
+    .floating-spec:nth-child(6) { animation: orbit3-tablet 22s linear infinite; animation-delay: -6s; }
+    .floating-spec:nth-child(7) { animation: orbit1-tablet 24s linear infinite; animation-delay: -7.2s; }
+    .floating-spec:nth-child(8) { animation: orbit2-tablet 23s linear infinite; animation-delay: -8.4s; }
+    .floating-spec:nth-child(9) { animation: orbit3-tablet 21s linear infinite; animation-delay: -9.6s; }
+    .floating-spec:nth-child(10) { animation: orbit1-tablet 25s linear infinite; animation-delay: -10.8s; }
+    .floating-spec:nth-child(11) { animation: orbit2-tablet 22s linear infinite; animation-delay: -12s; }
+    .floating-spec:nth-child(12) { animation: orbit3-tablet 24s linear infinite; animation-delay: -13.2s; }
+    .floating-spec:nth-child(13) { animation: orbit1-tablet 23s linear infinite; animation-delay: -14.4s; }
+    .floating-spec:nth-child(14) { animation: orbit2-tablet 21s linear infinite; animation-delay: -15.6s; }
+    .floating-spec:nth-child(15) { animation: orbit3-tablet 25s linear infinite; animation-delay: -16.8s; }
+    .floating-spec:nth-child(16) { animation: orbit1-tablet 22s linear infinite; animation-delay: -18s; }
+    .floating-spec:nth-child(17) { animation: orbit2-tablet 24s linear infinite; animation-delay: -19.2s; }
+    .floating-spec:nth-child(18) { animation: orbit3-tablet 23s linear infinite; animation-delay: -20.4s; }
+    .floating-spec:nth-child(19) { animation: orbit1-tablet 21s linear infinite; animation-delay: -21.6s; }
+    .floating-spec:nth-child(20) { animation: orbit2-tablet 25s linear infinite; animation-delay: -22.8s; }
+    
+    @keyframes orbit1-tablet {
+        0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+    }
+    @keyframes orbit2-tablet {
+        0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+    @keyframes orbit3-tablet {
+        0% { transform: rotate(0deg) translateX(220px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(220px) rotate(-360deg); }
     }
 }
 
@@ -1537,6 +1573,79 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    /* Mobile PC Animation */
+    .hero-visual {
+        max-width: 350px;
+        height: 300px;
+    }
+    
+    .pc-showcase {
+        width: 140px;
+        height: 100px;
+    }
+    
+    .pc-case {
+        width: 140px;
+        height: 100px;
+    }
+    
+    .pc-fan {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .pc-fan::before {
+        inset: 7px;
+    }
+    
+    .pc-fan::after {
+        inset: 13px;
+    }
+    
+    .pc-top-fans {
+        left: 10px;
+    }
+    
+    .floating-spec {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+    
+    /* Kleinere Orbit-Radien für Mobile */
+    .floating-spec:nth-child(1) { animation: orbit1-mobile 22s linear infinite; animation-delay: 0s; }
+    .floating-spec:nth-child(2) { animation: orbit2-mobile 24s linear infinite; animation-delay: -1.2s; }
+    .floating-spec:nth-child(3) { animation: orbit3-mobile 23s linear infinite; animation-delay: -2.4s; }
+    .floating-spec:nth-child(4) { animation: orbit1-mobile 21s linear infinite; animation-delay: -3.6s; }
+    .floating-spec:nth-child(5) { animation: orbit2-mobile 25s linear infinite; animation-delay: -4.8s; }
+    .floating-spec:nth-child(6) { animation: orbit3-mobile 22s linear infinite; animation-delay: -6s; }
+    .floating-spec:nth-child(7) { animation: orbit1-mobile 24s linear infinite; animation-delay: -7.2s; }
+    .floating-spec:nth-child(8) { animation: orbit2-mobile 23s linear infinite; animation-delay: -8.4s; }
+    .floating-spec:nth-child(9) { animation: orbit3-mobile 21s linear infinite; animation-delay: -9.6s; }
+    .floating-spec:nth-child(10) { animation: orbit1-mobile 25s linear infinite; animation-delay: -10.8s; }
+    .floating-spec:nth-child(11) { animation: orbit2-mobile 22s linear infinite; animation-delay: -12s; }
+    .floating-spec:nth-child(12) { animation: orbit3-mobile 24s linear infinite; animation-delay: -13.2s; }
+    .floating-spec:nth-child(13) { animation: orbit1-mobile 23s linear infinite; animation-delay: -14.4s; }
+    .floating-spec:nth-child(14) { animation: orbit2-mobile 21s linear infinite; animation-delay: -15.6s; }
+    .floating-spec:nth-child(15) { animation: orbit3-mobile 25s linear infinite; animation-delay: -16.8s; }
+    .floating-spec:nth-child(16) { animation: orbit1-mobile 22s linear infinite; animation-delay: -18s; }
+    .floating-spec:nth-child(17) { animation: orbit2-mobile 24s linear infinite; animation-delay: -19.2s; }
+    .floating-spec:nth-child(18) { animation: orbit3-mobile 23s linear infinite; animation-delay: -20.4s; }
+    .floating-spec:nth-child(19) { animation: orbit1-mobile 21s linear infinite; animation-delay: -21.6s; }
+    .floating-spec:nth-child(20) { animation: orbit2-mobile 25s linear infinite; animation-delay: -22.8s; }
+    
+    @keyframes orbit1-mobile {
+        0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
+    @keyframes orbit2-mobile {
+        0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+    }
+    @keyframes orbit3-mobile {
+        0% { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
     }
     
     .info-grid {
